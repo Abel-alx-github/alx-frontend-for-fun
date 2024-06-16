@@ -17,7 +17,7 @@ def convert_heading_tohtml(line):
 
 
 def convert_list_tohtml(line, list_type):
-  """Converts a Markdown list item line to HTML."""
+  """Converts a Markdown list item line to HTML ."""
 
   if line.startswith(list_type[0]):  
     return f"<li>{line[2:].strip()}</li>" 
