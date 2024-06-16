@@ -1,9 +1,10 @@
-#!/usrbin/python3
+#!/usr/bin/python3
 ''' define function that conver html to markdown'''
 
 import sys
 import os
 import re
+
 
 def convert_heading_tohtml(line):
   """Converts a Markdown heading line to HTML."""
@@ -14,6 +15,7 @@ def convert_heading_tohtml(line):
   else:
     return line
 
+
 def convert_list_tohtml(line, list_type):
   """Converts a Markdown list item line to HTML."""
 
@@ -21,6 +23,7 @@ def convert_list_tohtml(line, list_type):
     return f"<li>{line[2:].strip()}</li>" 
   else:
     return line
+
 
 def convert_paragraph_tohtml(lines):
   """Converts a sequence of Markdown lines to HTML paragraphs."""
@@ -36,18 +39,12 @@ def convert_paragraph_tohtml(lines):
   else:
     return ""
 
+
 def convert_inline_element_tohtml(text, opening_tag, closing_tag):
   """Converts inline Markdown formatting to HTML."""
  
   pattern = f"{opening_tag}(.*?){closing_tag}"
   return re.sub(pattern, rf"\1", text)
-
-
-
-
-
-
-
 
 
 def main():
@@ -85,33 +82,31 @@ def main():
           if in_list:
             html_f.write("</ol>\n")
           in_list = "-"
-          html_f.write("<ul>\n")  # Start a new unordered list
+          html_f.write("<ul>\n")
         html_f.write(convert_list_tohtml(line, in_list))
       elif line.startswith("*"):
         if in_list != "*":
-          if in_list:  # Close previous list if it was unordered
+          if in_list:
             html_f.write("</ul>\n")
           in_list = "*"
-          html_f.write("<ol>\n")  # Start a new ordered list
+          html_f.write("<ol>\n")
         html_f.write(convert_list_tohtml(line, in_list))
       else:
-        if in_list:  # Close list if it was open
+        if in_list:
           if in_list == "ul":
             html_f.write("</ul>\n")
           else:
             html_f.write("</ol>\n")
           in_list = None
-        current_paragraph.append(line)  # Add line to paragraph
+        current_paragraph.append(line)
     if in_list:
         if in_list == "ul":
             html_f.write("</ul>\n")
         else:
             html_f.write("</ol>\n")
-    if current_paragraph:  # Write the last paragraph if it exists
+    if current_paragraph:
       html_f.write(convert_paragraph_tohtml(current_paragraph))
 
-
-  print("Conversion successful!")
 
 if __name__ == "__main__":
   main()
