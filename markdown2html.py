@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' a module contain function that conver html to markdown'''
+''' a module contains function that conver html to markdown'''
 
 
 if __name__ == '__main__':
