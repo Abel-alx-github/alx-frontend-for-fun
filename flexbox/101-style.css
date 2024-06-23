@@ -1,0 +1,59 @@
+/*  a CSS file that display a set of boxes  */
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.box1, .box5 {
+    width:5rem;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+.box1 {
+    background-color: rgb(76, 192, 76);
+}
+
+.box5 {
+    background-color: orange;
+}   
+
+.box2 {
+    background-color: rgb(64, 151, 217);
+}
+
+
+.box4 {
+    background-color: rgb(197, 119, 185);
+}
+
+.box2, .box4 {
+    width: 8rem;
+    height: 5rem;
+    font-size: 2rem;
+
+}
+
+
+.box3 {
+    background-color: rgb(23, 78, 141);
+    width: 11rem;
+    height: 8rem;
+    font-size: 2.5rem;
+
+}
+
+
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+}
