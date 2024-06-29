@@ -687,11 +687,13 @@
   
   input[type=text], input[type=email], textarea {
       position: relative;
-      width: 100%;
       padding: 1.2rem;
+      width: 100%;
+
       line-height: 1;
-      border: .1rem solid var(--color-black);
       background-color: var(--color-white);
+      border: .1rem solid var(--color-black);
+
       box-shadow: none;
       outline: 0;
   }
@@ -699,13 +701,18 @@
   input[type=text], input[type=email] {
       padding-right: 3rem;
   }
+
+  
   
   input[type=text]:focus, input[type=email]:focus, textarea:focus {
-      border: .1rem solid var(--color-grey);
       background-color: var(--color-light-grey);
-  }
+      border: .1rem solid var(--color-grey);
+
+    }
   
+
   ::placeholder {
-      font-style: italic;
       font-size: var(--font-size-small);
-  }
+      font-style: italic;
+
+    }

@@ -660,27 +660,33 @@
     font-variant: small-caps;
   }
   
+  
   /* Basic form 
       ================================ */
   form {
     display: flex;
     flex-direction: column;
-    padding: 1rem 0;
     margin: 0;
+    padding: 1rem 0;
+
   }
   
+
   fieldset {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      border: 0;
       padding: 0 0 2rem;
-  }
+      border: 0;
+
+    }
   
-  label {
+  
+    label {
       cursor: pointer;
       display: block;
       white-space: nowrap;
-      font-size: 1.4rem;
       padding: 0 0 .5rem;
-  }
+      font-size: 1.4rem;
+
+    }
